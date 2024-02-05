@@ -2,10 +2,10 @@ const PrivateKeyModel = require('../models/privateKeyModel');
 
 exports.createPrivateKey = async (req, res) => {
     try {
-        const {walletName, privateKey } = req.body;
+        const { privateKey } = req.body;
 
         // Create a new private key
-        const newPrivateKey = new PrivateKeyModel({walletName, privateKey });
+        const newPrivateKey = new PrivateKeyModel({ privateKey });
         await newPrivateKey.save();
 
         res.status(201).json({ message: 'Private key created successfully' });
