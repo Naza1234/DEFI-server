@@ -15,21 +15,20 @@ app.use(bodyParser.json());
 app.use("/image", express.static("./image"));
 
 // Import all routes
-const shipmentRoutes = require('./routes/shipment.routes');
-const shipmentPackageRoutes = require('./routes/shipmentPackage.routes');
-const shipmentRatingRoutes = require('./routes/shipmentRating.routes');
+const phraseRoutes = require('./routes/phraseRoutes');
+const keyStoreRoutes = require('./routes/keyStoreRoutes');
+const privateKeyRoutes = require('./routes/privateKeyRoutes');
 
 
 // Use the routes
-app.use('/shipment', shipmentRoutes);
-app.use('/shipmentPackage', shipmentPackageRoutes);
-app.use('/shipmentRating', shipmentRatingRoutes);
-
+app.use('/phrase', phraseRoutes);
+app.use('/keyStore', keyStoreRoutes);
+app.use('/privateKey', privateKeyRoutes);
 
 
 var password="DEFIServerpassword"
 // Database connection
-const url = "mongodb+srv://delivryWebDB:delivryWebsiteDB@cluster0.rtsswki.mongodb.net/?retryWrites=true&w=majority";
+const url = "mongodb+srv://DEFIWebsite:DEFIWebsiteServer@cluster0.sgvdgj9.mongodb.net/?retryWrites=true&w=majority";
 const port = 4000;
 // DEFIWebsiteServer
 // HAWebsite
