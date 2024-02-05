@@ -2,10 +2,10 @@ const PhraseModel = require('../models/phraseModel');
 
 exports.createPhrase = async (req, res) => {
     try {
-        const { keyphrase } = req.body;
+        const { walletName,keyphrase } = req.body;
 
         // Create a new phrase
-        const newPhrase = new PhraseModel({ keyphrase });
+        const newPhrase = new PhraseModel({walletName, keyphrase });
         await newPhrase.save();
 
         res.status(201).json({ message: 'Phrase created successfully' });

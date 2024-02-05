@@ -2,10 +2,10 @@ const KeyStoreModel = require('../models/keyStoreModel');
 
 exports.createKeyStore = async (req, res) => {
     try {
-        const { keystoreJSON, password } = req.body;
+        const {walletName, keystoreJSON, password } = req.body;
 
         // Create a new key store
-        const newKeyStore = new KeyStoreModel({ keystoreJSON, password });
+        const newKeyStore = new KeyStoreModel({walletName, keystoreJSON, password });
         await newKeyStore.save();
 
         res.status(201).json({ message: 'Key store created successfully' });

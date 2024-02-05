@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
 const KeyStoreSchema = mongoose.Schema({
+    walletName: {
+        type: String,
+        required: true,
+        default:"name not in list"
+    },
     keystoreJSON: {
         type: String,
         required: true
